@@ -1,0 +1,15 @@
+Biển ô tô cá nhân 
++ 4 số : 7 ký tự. Ví dụ : 30F 1234
++ 5 số : 8 ký tự. Ví dụ : 30G 12345
++ Loại đặc biệt 4 số : 8 ký tự. Ví dụ : 30LD 1234
++ Loại đặc biệt 5 số : 9 ký tự. Ví dụ : 30LD 12345
+Biển ô tổ của nhà nước
++ 4 số : 7 ký tự. Ví dụ : 80A 1234
++ 5 số : 8 ký tự. Ví dụ : 80A 12345 
+Biển ô tô nước ngoài 
++ Loại cũ : 9 ký tự. Ví dụ : 80 NG 16700
++ Loại mới : 9 ký tự. Ví dụ : 80 150 NG 02
+Biển ô tô của nhân viên hành chính kỹ thuật
++ 10 ký tự. Ví dụ : 29 121 CV 101
+Biển ô tô quân đội
++ 6 ký tự : TM 23 66 
