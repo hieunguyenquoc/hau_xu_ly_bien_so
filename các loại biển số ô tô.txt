@@ -7,7 +7,7 @@ Biển ô tổ của nhà nước
 + 4 số : 7 ký tự. Ví dụ : 80A 1234
 + 5 số : 8 ký tự. Ví dụ : 80A 12345 
 Biển ô tô nước ngoài 
-+ Loại cũ : 9 ký tự. Ví dụ : 80 NG 16700
++ Loại cũ : 9 ký tự. Ví dụ : 80 NG 16 700
 + Loại mới : 9 ký tự. Ví dụ : 80 150 NG 02
 Biển ô tô của nhân viên hành chính kỹ thuật
 + 10 ký tự. Ví dụ : 29 121 CV 101
