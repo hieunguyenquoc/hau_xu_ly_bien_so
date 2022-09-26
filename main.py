@@ -9,14 +9,22 @@ ma_tinh = ["11", "12", "14", "15", "16", "17", "18", "19", "20", "21", "22",
 seri_dang_ky_chu = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 # seri_dang_ky_so = ["1","2","3","4","5","6","7","8","9"]
 xe_dac_biet = ["LD","DA","MK","TĐ","HC"]
-ma_nuoc_ngoai = ["NG","NN","CV"]
+ma_nuoc_ngoai = ["NG","NN"]
+bien_so_nuoc_ngoai = ["011", "026", "041", "061", "066", 
+                      "121", "156", "166", "191", "206", 
+                      "296", "297", "301", "331", "336", 
+                      "346", "364", "376", "381", "441", 
+                      "446", "456", "501", "506", "521", 
+                      "546", "547", "548", "549", "566", 
+                      "581", "601", "606", "626", "631", 
+                      "636", "691", "731", "888"]
 quan_doi = ["TM", "TC", "TH", "TT", "TK", "TN", "KA", "KB", "KC", "KD", "KV", 
             "KP", "KK", "KT", "AA", "AB", "AC", "AD", "QA", "QH", "QB", "QC", 
             "QM", "BL", "BB", "BC", "BK", "BP", "BH", "BT", "HA", "HB", "HC", 
             "HE", "HD", "HH", "HT", "HQ", "HN", "PA", "PG", "PK", "PQ", "PM", 
             "PX", "PP-10", "PP-40", "PP-60", "AV", "AT", "AN", "AX", "AM", "VT", 
             "CA", "CB", "CD", "CH", "CK", "CM", "CN", "CP", "CT", "CV"]
-input = "TQq36Z"
+input = "30NG88801"
 
 def replacer(s, newstring, index, nofail=False):
     # raise an error if index is outside of the string
