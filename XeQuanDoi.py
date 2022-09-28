@@ -9,15 +9,15 @@ def xe_quan_doi(bien_so):
         for i in range(2,6):
             if bien_so[i] == "l" or bien_so[i] == "L":
                 bien_so = replacer(bien_so,"1",i)
-            if bien_so[i] == "Z":
+            elif bien_so[i] == "Z":
                 bien_so = replacer(bien_so,"2",i)
-            if bien_so[i] == "b":
+            elif bien_so[i] == "b":
                 bien_so = replacer(bien_so,"6",i)
-            if bien_so[i] == "B":
+            elif bien_so[i] == "B":
                 bien_so = replacer(bien_so,"8",i)
-            if bien_so[i] == "q":
+            elif bien_so[i] == "q":
                 bien_so = replacer(bien_so,"9",i)
-            if bien_so[i] == "O":
+            elif bien_so[i] == "O":
                 bien_so = replacer(bien_so,"0",i)   
         try:
             int(bien_so[2:])     

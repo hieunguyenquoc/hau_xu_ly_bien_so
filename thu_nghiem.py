@@ -1,3 +1,6 @@
+from operator import index
+
+
 ma_tinh = ["11", "12", "14", "15", "16", "17", "18", "19", "20", "21", "22", 
            "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", 
            "40", "34", "35", "36", "37", "38", "43", "47", "48", "49", "41", 
@@ -52,10 +55,11 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
     print("Xe ca nhan, nha nuoc vao day")
     bien_so_co_dinh = bien_so
     print("Bien so truoc chinh sua :",bien_so_co_dinh)
-    if (len(bien_so) < 7) or (len(bien_so) > 9):
+    if (len(bien_so) < 7):
         return bien_so
     else:
         if bien_so[2:4] in xe_dac_biet:
+            
             for i in range(0,2):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
@@ -69,6 +73,7 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                     bien_so = replacer(bien_so,"9",i)
                 if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
+
             if bien_so[0:2] not in ma_tinh:
                 print("Khong the sua bien so :",bien_so_co_dinh)
                 return bien_so_co_dinh
@@ -738,8 +743,21 @@ def main(input):
     if (input[0:2] in quan_doi) and (len(input)==6):
         xe_quan_doi(input)
     elif (len(input)==7):
+        if (len(input[:2])==3):
+            input = replacer(input,"",0)
+        if (len(input[3:])==5):
+            input = replacer(input,"",-1)
         xe_ca_nhan_co_quan_nha_nuoc(input)
     elif (len(input)==8):
+        ket_qua = (i for i in input if i in seri_dang_ky_chu)
+        ket_qua = ''.join(ket_qua)
+        if (len(input[:input.index(ket_qua)]) == 3):
+            input = replacer(input,"",0)
+            # xe_ca_nhan_co_quan_nha_nuoc(input)
+
+        elif (len(input[input.index(ket_qua) + 1:]) == 5):
+            input = replacer(input,"",len(input)-1)
+            # xe_ca_nhan_co_quan_nha_nuoc(input)
         if input[2] == "L":
             input = replacer(input,"D",3)
         if input[2] == "D":
@@ -762,6 +780,32 @@ def main(input):
             input = replacer(input,"H",2)
         xe_ca_nhan_co_quan_nha_nuoc(input)
     elif (len(input)==9):
+        # ket_qua = (i for i in input if i in seri_dang_ky_chu)
+        # ket_qua = ''.join(ket_qua)
+        # ket_qua2 = (j for j in xe_dac_biet if j in input)
+        # ket_qua2 = ''.join(ket_qua2)
+        
+        # if (len(input[:input.index(ket_qua)]) == 3 and len(input[input.index(ket_qua) + 1:]) == 5):
+        #     input = replacer(input,"",0)
+        #     input = replacer(input,"",len(input)-1)
+        #     xe_ca_nhan_co_quan_nha_nuoc(input)
+            
+        # elif (len(input[:input.index(ket_qua)]) == 3):
+        #     input = replacer(input,"",0)
+        #     xe_ca_nhan_co_quan_nha_nuoc(input)
+
+        # elif (len(input[input.index(ket_qua) + 1:]) == 5):
+        #     input = replacer(input,"",len(input)-1)
+        #     xe_ca_nhan_co_quan_nha_nuoc(input)
+            
+        # elif (len(input[:input.index(ket_qua2)]) == 3):
+        #     input = replacer(input,"",0)
+        #     xe_ca_nhan_co_quan_nha_nuoc(input)
+        
+        # elif (len(input[input.index(ket_qua2) + 1:]) == 5):
+        #     input = replacer(input,"",len(input)-1)
+        #     xe_ca_nhan_co_quan_nha_nuoc(input)
+        
         if (check_type_of_character(input[2:5])) >= 2:
             if input[5] == "N":
                 input = replacer(input,"G",6)
@@ -797,7 +841,7 @@ def main(input):
                 xe_ca_nhan_co_quan_nha_nuoc(input)
             else:
                 print("Khong the sua bien so :",input)
-                return input
+                return input  
     else:
         print("Bien khong thuoc loai nao het")
         return input

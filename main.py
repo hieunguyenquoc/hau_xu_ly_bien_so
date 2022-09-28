@@ -25,71 +25,73 @@ input = input("Nhap vao bien so :")
 
 def main(input):
     if (input[0:2] in quan_doi) and (len(input)==6):
-        xe_quan_doi(input)
+        return xe_quan_doi(input)
     elif (len(input)==7):
-        xe_ca_nhan_co_quan_nha_nuoc(input)
+        return xe_ca_nhan_co_quan_nha_nuoc(input)
     elif (len(input)==8):
         if input[2] == "L":
             input = replacer(input,"D",3)
-        if input[2] == "D":
+        elif input[2] == "D":
             input = replacer(input,"A",3)
-        if input[2] == "M":
+        elif input[2] == "M":
             input = replacer(input,"K",3)
-        if input[2] == "T":
+        elif input[2] == "T":
             input = replacer(input,"Đ",3)
-        if input[2] == "H":
+        elif input[2] == "H":
             input = replacer(input,"C",3)
-        if input[3] == "D":
+        elif input[3] == "D":
             input = replacer(input,"L",2)
-        if input[3] == "A":
+        elif input[3] == "A":
             input = replacer(input,"D",2)
-        if input[3] == "K":
+        elif input[3] == "K":
             input = replacer(input,"M",2)
-        if input[3] == "Đ":
+        elif input[3] == "Đ":
             input = replacer(input,"T",2)
-        if input[3] == "C":
+        elif input[3] == "C":
             input = replacer(input,"H",2)
-        xe_ca_nhan_co_quan_nha_nuoc(input)
+        return xe_ca_nhan_co_quan_nha_nuoc(input)
     elif (len(input)==9):
         if (check_type_of_character(input[2:5])) >= 2:
             if input[5] == "N":
                 input = replacer(input,"G",6)
-            if input[6] == "N" or input[6] == "G":
+            elif input[6] == "N" or input[6] == "G":
                 input = replacer(input,"N",5)
-            xe_nuoc_ngoai(input)
+            return xe_nuoc_ngoai(input)
         else:
             if input[2] == "L":
                 input = replacer(input,"D",3)
-            if input[2] == "D":
+            elif input[2] == "D":
                 input = replacer(input,"A",3)
-            if input[2] == "M":
+            elif input[2] == "M":
                 input = replacer(input,"K",3)
-            if input[2] == "T":
+            elif input[2] == "T":
                 input = replacer(input,"Đ",3)
-            if input[2] == "H":
+            elif input[2] == "H":
                 input = replacer(input,"C",3)
-            if input[3] == "D":
+            elif input[3] == "D":
                 input = replacer(input,"L",2)
-            if input[3] == "A":
+            elif input[3] == "A":
                 input = replacer(input,"D",2)
-            if input[3] == "K":
+            elif input[3] == "K":
                 input = replacer(input,"M",2)
-            if input[3] == "Đ":
+            elif input[3] == "Đ":
                 input = replacer(input,"T",2)
-            if input[3] == "C":
+            elif input[3] == "C":
                 input = replacer(input,"H",2)
-            if input[2] == "N":
+            elif input[2] == "N":
                 input = replacer(input,"G",3)
             if input[2:4] in ma_nuoc_ngoai:
-                xe_nuoc_ngoai(input)
+                return xe_nuoc_ngoai(input)
             elif input[2:4] in xe_dac_biet:
-                xe_ca_nhan_co_quan_nha_nuoc(input)
+                return xe_ca_nhan_co_quan_nha_nuoc(input)
             else:
                 print("Khong the sua bien so :",input)
                 return input
+    # elif (len(input) > 9):
+
     else:
         print("Bien khong thuoc loai nao het")
         return input
 
-main(input)
+print(main(input))
             
