@@ -88,7 +88,6 @@ def main(input):
                 print("Khong the sua bien so :",input)
                 return input
     # elif (len(input) > 9):
-
     else:
         print("Bien khong thuoc loai nao het")
         return input
