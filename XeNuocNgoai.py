@@ -33,15 +33,15 @@ def xe_nuoc_ngoai(bien_so):
         for i in range(0,2):
             if bien_so[i] == "l" or bien_so[i] == "L":
                 bien_so = replacer(bien_so,"1",i)
-            elif bien_so[i] == "Z":
+            if bien_so[i] == "Z":
                 bien_so = replacer(bien_so,"2",i)
-            elif bien_so[i] == "b":
+            if bien_so[i] == "b":
                 bien_so = replacer(bien_so,"6",i)
-            elif bien_so[i] == "B":
+            if bien_so[i] == "B":
                 bien_so = replacer(bien_so,"8",i)
-            elif bien_so[i] == "q":
+            if bien_so[i] == "q":
                 bien_so = replacer(bien_so,"9",i)
-            elif bien_so[i] == "O":
+            if bien_so[i] == "O":
                 bien_so = replacer(bien_so,"0",i)
         if bien_so[0:2] not in ma_tinh:
                 print("Khong the sua bien so :",bien_so_co_dinh)
@@ -50,15 +50,15 @@ def xe_nuoc_ngoai(bien_so):
             for i in range(4,7):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
-                elif bien_so[i] == "Z":
+                if bien_so[i] == "Z":
                     bien_so = replacer(bien_so,"2",i)
-                elif bien_so[i] == "b":
+                if bien_so[i] == "b":
                     bien_so = replacer(bien_so,"6",i)
-                elif bien_so[i] == "B":
+                if bien_so[i] == "B":
                     bien_so = replacer(bien_so,"8",i)
-                elif bien_so[i] == "q":
+                if bien_so[i] == "q":
                     bien_so = replacer(bien_so,"9",i)
-                elif bien_so[i] == "O":
+                if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
             if bien_so[5:7] == "11" :
                 bien_so = replacer(bien_so,"0",4)
@@ -224,15 +224,15 @@ def xe_nuoc_ngoai(bien_so):
                     for i in range(7,9):
                         if bien_so[i] == "l" or bien_so[i] == "L":
                             bien_so = replacer(bien_so,"1",i)
-                        elif bien_so[i] == "Z":
+                        if bien_so[i] == "Z":
                             bien_so = replacer(bien_so,"2",i)
-                        elif bien_so[i] == "b":
+                        if bien_so[i] == "b":
                             bien_so = replacer(bien_so,"6",i)
-                        elif bien_so[i] == "B":
+                        if bien_so[i] == "B":
                             bien_so = replacer(bien_so,"8",i)
-                        elif bien_so[i] == "q":
+                        if bien_so[i] == "q":
                             bien_so = replacer(bien_so,"9",i)
-                        elif bien_so[i] == "O":
+                        if bien_so[i] == "O":
                             bien_so = replacer(bien_so,"0",i)
                     
                     try :
@@ -251,15 +251,15 @@ def xe_nuoc_ngoai(bien_so):
         for i in range(0,2):
             if bien_so[i] == "l" or bien_so[i] == "L":
                 bien_so = replacer(bien_so,"1",i)
-            elif bien_so[i] == "Z":
+            if bien_so[i] == "Z":
                 bien_so = replacer(bien_so,"2",i)
-            elif bien_so[i] == "b":
+            if bien_so[i] == "b":
                 bien_so = replacer(bien_so,"6",i)
-            elif bien_so[i] == "B":
+            if bien_so[i] == "B":
                 bien_so = replacer(bien_so,"8",i)
-            elif bien_so[i] == "q":
+            if bien_so[i] == "q":
                 bien_so = replacer(bien_so,"9",i)
-            elif bien_so[i] == "O":
+            if bien_so[i] == "O":
                 bien_so = replacer(bien_so,"0",i)
         
         if bien_so[0:2] not in ma_tinh:
@@ -269,15 +269,15 @@ def xe_nuoc_ngoai(bien_so):
             for i in range(2,5):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
-                elif bien_so[i] == "Z":
+                if bien_so[i] == "Z":
                     bien_so = replacer(bien_so,"2",i)
-                elif bien_so[i] == "b":
+                if bien_so[i] == "b":
                     bien_so = replacer(bien_so,"6",i)
-                elif bien_so[i] == "B":
+                if bien_so[i] == "B":
                     bien_so = replacer(bien_so,"8",i)
-                elif bien_so[i] == "q":
+                if bien_so[i] == "q":
                     bien_so = replacer(bien_so,"9",i)
-                elif bien_so[i] == "O":
+                if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
             if bien_so[3:5] == "11" :
                 bien_so = replacer(bien_so,"0",2)
@@ -444,15 +444,15 @@ def xe_nuoc_ngoai(bien_so):
                     for i in range(7,9):
                         if bien_so[i] == "l" or bien_so[i] == "L":
                             bien_so = replacer(bien_so,"1",i)
-                        elif bien_so[i] == "Z":
+                        if bien_so[i] == "Z":
                             bien_so = replacer(bien_so,"2",i)
-                        elif bien_so[i] == "b":
+                        if bien_so[i] == "b":
                             bien_so = replacer(bien_so,"6",i)
-                        elif bien_so[i] == "B":
+                        if bien_so[i] == "B":
                             bien_so = replacer(bien_so,"8",i)
-                        elif bien_so[i] == "q":
+                        if bien_so[i] == "q":
                             bien_so = replacer(bien_so,"9",i)
-                        elif bien_so[i] == "O":
+                        if bien_so[i] == "O":
                             bien_so = replacer(bien_so,"0",i)
                     
                     try:

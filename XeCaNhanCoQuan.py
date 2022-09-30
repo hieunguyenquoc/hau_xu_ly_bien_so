@@ -34,19 +34,21 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
         return bien_so
     else:
         if bien_so[2:4] in xe_dac_biet:
+            
             for i in range(0,2):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
-                elif bien_so[i] == "Z" or bien_so[i] == "z":
+                if bien_so[i] == "Z" or bien_so[i] == "z":
                     bien_so = replacer(bien_so,"2",i)
-                elif bien_so[i] == "b":
+                if bien_so[i] == "b":
                     bien_so = replacer(bien_so,"6",i)
-                elif bien_so[i] == "B":
+                if bien_so[i] == "B":
                     bien_so = replacer(bien_so,"8",i)
-                elif bien_so[i] == "q":
+                if bien_so[i] == "q":
                     bien_so = replacer(bien_so,"9",i)
-                elif bien_so[i] == "O":
+                if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
+
             if bien_so[0:2] not in ma_tinh:
                 print("Khong the sua bien so :",bien_so_co_dinh)
                 return bien_so_co_dinh
@@ -55,15 +57,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                     for i in range(4,8):
                         if bien_so[i] == "l" or bien_so[i] == "L":
                             bien_so = replacer(bien_so,"1",i)
-                        elif bien_so[i] == "Z":
+                        if bien_so[i] == "Z":
                             bien_so = replacer(bien_so,"2",i)
-                        elif bien_so[i] == "b":
+                        if bien_so[i] == "b":
                             bien_so = replacer(bien_so,"6",i)
-                        elif bien_so[i] == "B":
+                        if bien_so[i] == "B":
                             bien_so = replacer(bien_so,"8",i)
-                        elif bien_so[i] == "q":
+                        if bien_so[i] == "q":
                             bien_so = replacer(bien_so,"9",i)
-                        elif bien_so[i] == "O":
+                        if bien_so[i] == "O":
                             bien_so = replacer(bien_so,"0",i)
                     try:
                         int(bien_so[4:])
@@ -77,15 +79,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                     for i in range(4,9):
                         if bien_so[i] == "l" or bien_so[i] == "L":
                             bien_so = replacer(bien_so,"1",i)
-                        elif bien_so[i] == "Z":
+                        if bien_so[i] == "Z":
                             bien_so = replacer(bien_so,"2",i)
-                        elif bien_so[i] == "b":
+                        if bien_so[i] == "b":
                             bien_so = replacer(bien_so,"6",i)
-                        elif bien_so[i] == "B":
+                        if bien_so[i] == "B":
                             bien_so = replacer(bien_so,"8",i)
-                        elif bien_so[i] == "q":
+                        if bien_so[i] == "q":
                             bien_so = replacer(bien_so,"9",i)
-                        elif bien_so[i] == "O":
+                        if bien_so[i] == "O":
                             bien_so = replacer(bien_so,"0",i)
                     try:
                         int(bien_so[4:])
@@ -99,15 +101,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
             for i in range(4,8):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
-                elif bien_so[i] == "Z":
+                if bien_so[i] == "Z":
                     bien_so = replacer(bien_so,"2",i)
-                elif bien_so[i] == "b":
+                if bien_so[i] == "b":
                     bien_so = replacer(bien_so,"6",i)
-                elif bien_so[i] == "B":
+                if bien_so[i] == "B":
                     bien_so = replacer(bien_so,"8",i)
-                elif bien_so[i] == "q":
+                if bien_so[i] == "q":
                     bien_so = replacer(bien_so,"9",i)
-                elif bien_so[i] == "O":
+                if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
             try:
                 int(bien_so[4:])
@@ -121,15 +123,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
             for i in range(4,9):
                 if bien_so[i] == "l" or bien_so[i] == "L":
                     bien_so = replacer(bien_so,"1",i)
-                elif bien_so[i] == "Z":
+                if bien_so[i] == "Z":
                     bien_so = replacer(bien_so,"2",i)
-                elif bien_so[i] == "b":
+                if bien_so[i] == "b":
                     bien_so = replacer(bien_so,"6",i)
-                elif bien_so[i] == "B":
+                if bien_so[i] == "B":
                     bien_so = replacer(bien_so,"8",i)
-                elif bien_so[i] == "q":
+                if bien_so[i] == "q":
                     bien_so = replacer(bien_so,"9",i)
-                elif bien_so[i] == "O":
+                if bien_so[i] == "O":
                     bien_so = replacer(bien_so,"0",i)
             try:
                 int(bien_so[4:])
@@ -143,15 +145,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                 for i in range(0,2):
                     if bien_so[i] == "l" or bien_so[i] == "L":
                         bien_so = replacer(bien_so,"1",i)
-                    elif bien_so[i] == "Z":
+                    if bien_so[i] == "Z":
                         bien_so = replacer(bien_so,"2",i)
-                    elif bien_so[i] == "b":
+                    if bien_so[i] == "b":
                         bien_so = replacer(bien_so,"6",i)
-                    elif bien_so[i] == "B":
+                    if bien_so[i] == "B":
                         bien_so = replacer(bien_so,"8",i)
-                    elif bien_so[i] == "q":
+                    if bien_so[i] == "q":
                         bien_so = replacer(bien_so,"9",i)
-                    elif bien_so[i] == "O":
+                    if bien_so[i] == "O":
                         bien_so = replacer(bien_so,"0",i)
                 if bien_so[0:2] not in ma_tinh:
                     print("Khong the sua bien so :",bien_so_co_dinh)
@@ -159,9 +161,9 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                 else:
                     if bien_so[2] == "2":
                         bien_so = replacer(bien_so,"Z",2)
-                    elif bien_so[2] == "8":
+                    if bien_so[2] == "8":
                         bien_so = replacer(bien_so,"B",2)
-                    elif bien_so[2] not in seri_dang_ky_chu:
+                    if bien_so[2] not in seri_dang_ky_chu:
                         print("Khong the sua bien so :",bien_so_co_dinh)
                         return bien_so_co_dinh
                     else:
@@ -191,15 +193,15 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                 for i in range(0,2):
                     if bien_so[i] == "l" or bien_so[i] == "L":
                         bien_so = replacer(bien_so,"1",i)
-                    elif bien_so[i] == "Z":
+                    if bien_so[i] == "Z":
                         bien_so = replacer(bien_so,"2",i)
-                    elif bien_so[i] == "b":
+                    if bien_so[i] == "b":
                         bien_so = replacer(bien_so,"6",i)
-                    elif bien_so[i] == "B":
+                    if bien_so[i] == "B":
                         bien_so = replacer(bien_so,"8",i)
-                    elif bien_so[i] == "q":
+                    if bien_so[i] == "q":
                         bien_so = replacer(bien_so,"9",i)
-                    elif bien_so[i] == "O":
+                    if bien_so[i] == "O":
                         bien_so = replacer(bien_so,"0",i)
                 if bien_so[0:2] not in ma_tinh:
                     print("Khong the sua bien so :",bien_so_co_dinh)
@@ -207,26 +209,26 @@ def xe_ca_nhan_co_quan_nha_nuoc(bien_so):
                 else:
                     if bien_so[2] == "2":
                         bien_so = replacer(bien_so,"Z",2)
-                    elif bien_so[2] == "8":
+                    if bien_so[2] == "8":
                         bien_so = replacer(bien_so,"B",2)
-                    elif bien_so[2] == "1":
+                    if bien_so[2] == "1":
                         bien_so = replacer(bien_so,"L",2)
-                    elif bien_so[2] not in seri_dang_ky_chu:
+                    if bien_so[2] not in seri_dang_ky_chu:
                         print("Khong the sua bien so :",bien_so_co_dinh)
                         return bien_so_co_dinh
                     else:
                         for i in range(3,8):
                             if bien_so[i] == "l" or bien_so[i] == "L":
                                 bien_so = replacer(bien_so,"1",i)
-                            elif bien_so[i] == "Z":
+                            if bien_so[i] == "Z":
                                 bien_so = replacer(bien_so,"2",i)
-                            elif bien_so[i] == "b":
+                            if bien_so[i] == "b":
                                 bien_so = replacer(bien_so,"6",i)
-                            elif bien_so[i] == "B":
+                            if bien_so[i] == "B":
                                 bien_so = replacer(bien_so,"8",i)
-                            elif bien_so[i] == "q":
+                            if bien_so[i] == "q":
                                 bien_so = replacer(bien_so,"9",i)
-                            elif bien_so[i] == "O":
+                            if bien_so[i] == "O":
                                 bien_so = replacer(bien_so,"0",i)
                         try:
                             int(bien_so[3:])
