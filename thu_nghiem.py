@@ -748,8 +748,13 @@ def main(input):
     #nếu input có 7 ký tự
     elif (len(input)==7):
         #tìm vị trí của đặc biệt của xe quân đội
-        ket_qua_quan_doi = (i for i in quan_doi if i in input)
-        ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
+        ket_qua_quan_doi = ""
+        for i in quan_doi:
+            if i in input:
+                ket_qua_quan_doi = i
+                break
+        # ket_qua_quan_doi = (i for i in quan_doi if i in input)
+        # ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
         p_quan_doi = input.index(ket_qua_quan_doi)
 
         #sửa biển số xe quân đội thừa trước
@@ -771,8 +776,13 @@ def main(input):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
-                ket_qua_quan_doi = (i for i in quan_doi if i in input)
-                ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
+                ket_qua_quan_doi = ""
+                for i in quan_doi:
+                    if i in input:
+                        ket_qua_quan_doi = i
+                        break
+                # ket_qua_quan_doi = (i for i in quan_doi if i in input)
+                # ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
                 p_quan_doi = input.index(ket_qua_quan_doi)
                 
                 #sửa biển số xe quân đội nếu thừa trước
@@ -798,9 +808,14 @@ def main(input):
                             input = replacer(input,"",input.index(j))
                         return xe_quan_doi(input) 
             else:
+                ket_qua_xe_dac_biet = ""
                 #tìm vị trí biển xe đặc biệt
-                ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
-                ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
+                for j in xe_dac_biet:
+                    if j in input:
+                        ket_qua_xe_dac_biet = j
+                        break
+                # ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
+                # ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
                 p_xe_dac_biet = input.index(ket_qua_xe_dac_biet)
             
                 if (input[p_xe_dac_biet:p_xe_dac_biet+2] in xe_dac_biet):
@@ -840,8 +855,13 @@ def main(input):
                     return xe_ca_nhan_co_quan_nha_nuoc(input)
                 else:
                     #tìm vị trí của seri đăng ký của biển số xe cá nhân và cơ quan 
-                    ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
-                    ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                    ket_qua_xe_thuong = ""
+                    for j in seri_dang_ky_chu:
+                        if j in input:
+                            ket_qua_xe_thuong = j
+                            break
+                    # ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
+                    # ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
                     p_xe_thuong = input.index(ket_qua_xe_thuong)  
                     
                     #sửa biển số xe cá nhân và cơ quan thừa trước
@@ -859,8 +879,13 @@ def main(input):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
-                ket_qua_quan_doi = (i for i in quan_doi if i in input)
-                ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
+                ket_qua_quan_doi = ""
+                for j in quan_doi:
+                    if j in input:
+                        ket_qua_quan_doi = j
+                        break
+                # ket_qua_quan_doi = (i for i in quan_doi if i in input)
+                # ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
                 p_quan_doi = input.index(ket_qua_quan_doi)
                 
                 #sửa biển số xe quân đội nếu thừa trước
@@ -887,8 +912,13 @@ def main(input):
                         return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
-                ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
-                ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
+                ket_qua_xe_dac_biet = ""
+                for j in xe_dac_biet:
+                    if j in input:
+                        ket_qua_xe_dac_biet = j
+                        break
+                # ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
+                # ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
                 p_xe_dac_biet = input.index(ket_qua_xe_dac_biet)
             
                 if (input[p_xe_dac_biet:p_xe_dac_biet+2] in xe_dac_biet):
@@ -933,8 +963,13 @@ def main(input):
                         input = replacer(input,"N",5)
                         return xe_nuoc_ngoai(input)
                     else:
-                        ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
-                        ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                        ket_qua_xe_thuong = ""
+                        for j in seri_dang_ky_chu:
+                            if j in input:
+                                ket_qua_xe_thuong = j
+                                break
+                        # ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
+                        # ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
                         # print(ket_qua_xe_thuong)
                         p_xe_thuong = input.index(ket_qua_xe_thuong)  
                         if (input[p_xe_thuong] in seri_dang_ky_chu):
@@ -981,8 +1016,13 @@ def main(input):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
-                ket_qua_quan_doi = (i for i in quan_doi if i in input)
-                ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
+                ket_qua_quan_doi = ""
+                for j in quan_doi:
+                    if j in input:
+                        ket_qua_quan_doi = j
+                        break
+                # ket_qua_quan_doi = (i for i in quan_doi if i in input)
+                # ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
                 p_quan_doi = input.index(ket_qua_quan_doi)
                 
                 #sửa biển số xe quân đội nếu thừa trước
@@ -1009,8 +1049,13 @@ def main(input):
                         return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
-                ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
-                ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
+                ket_qua_xe_dac_biet = ""
+                for j in xe_dac_biet:
+                    if j in input:
+                        ket_qua_xe_dac_biet = j
+                        break
+                # ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
+                # ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
                 p_xe_dac_biet = input.index(ket_qua_xe_dac_biet)
                 if (input[p_xe_dac_biet:p_xe_dac_biet+2] in xe_dac_biet):
                     
@@ -1056,8 +1101,13 @@ def main(input):
                     #kiểm tra xem có phải biển nước ngoài không
                     # if (check_type_of_character(input[2:5])) >= 2:
                         # xem vị trí của biển số nước ngoài
-                    ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
-                    ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
+                    ket_qua_xe_nuoc_ngoai = ""
+                    for j in ma_nuoc_ngoai:
+                        if j in input:
+                            ket_qua_xe_nuoc_ngoai = j
+                            break
+                    # ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
+                    # ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
                     p_xe_nuoc_ngoai = input.index(ket_qua_xe_nuoc_ngoai)
 
                     if (input[p_xe_nuoc_ngoai:p_xe_nuoc_ngoai+2] in ma_nuoc_ngoai):
@@ -1074,8 +1124,13 @@ def main(input):
                                 input = replacer(input,"",p_xe_nuoc_ngoai + 4)
                             return xe_nuoc_ngoai(input)
                     else:
-                        ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
-                        ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
+                        ket_qua_xe_nuoc_ngoai = ""
+                        for j in ma_nuoc_ngoai:
+                            if j in input:
+                                ket_qua_xe_nuoc_ngoai = j
+                                break
+                        # ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
+                        # ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
                         p_xe_nuoc_ngoai = input.index(ket_qua_xe_nuoc_ngoai)
  
                         if (input[p_xe_nuoc_ngoai:p_xe_nuoc_ngoai+2] in ma_nuoc_ngoai):
@@ -1093,8 +1148,13 @@ def main(input):
                                 return xe_nuoc_ngoai(input)
                         else:
                         #tìm vị trí của xe cá nhân, cơ quan
-                            ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
-                            ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                            ket_qua_xe_thuong = ""
+                            for j in seri_dang_ky_chu:
+                                if j in input:
+                                    ket_qua_xe_thuong = j
+                                    break
+                            # ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
+                            # ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
                             p_xe_thuong = input.index(ket_qua_xe_thuong)  
                             if (input[p_xe_thuong] in seri_dang_ky_chu):
                                 #sửa vị trí xe cá nhân, cơ quan thừa trước và sau
@@ -1124,8 +1184,13 @@ def main(input):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
-                ket_qua_quan_doi = (i for i in quan_doi if i in input)
-                ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
+                ket_qua_quan_doi = ""
+                for j in quan_doi:
+                    if j in input:
+                        ket_qua_quan_doi = j
+                        break
+                # ket_qua_quan_doi = (i for i in quan_doi if i in input)
+                # ket_qua_quan_doi = ''.join(ket_qua_quan_doi)
                 p_quan_doi = input.index(ket_qua_quan_doi)
                 
                 #sửa biển số xe quân đội nếu thừa trước
@@ -1152,8 +1217,13 @@ def main(input):
                         return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
-                ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
-                ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
+                ket_qua_xe_dac_biet = ""
+                for j in xe_dac_biet:
+                    if j in input:
+                        ket_qua_xe_dac_biet = j
+                        break
+                # ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
+                # ket_qua_xe_dac_biet = ''.join(ket_qua_xe_dac_biet)
                 p_xe_dac_biet = input.index(ket_qua_xe_dac_biet)
                 if (input[p_xe_dac_biet:p_xe_dac_biet+2] in xe_dac_biet):
                     #sửa biển số xe cá nhân và cơ quan thừa trước và sau
@@ -1181,8 +1251,13 @@ def main(input):
                     #kiểm tra xem có phải biển nước ngoài không
                     # if (check_type_of_character(input[2:5])) >= 2:
                         # xem vị trí của biển số nước ngoài
-                    ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
-                    ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
+                    ket_qua_xe_nuoc_ngoai = ""
+                    for j in ma_nuoc_ngoai:
+                        if j in input:
+                            ket_qua_xe_nuoc_ngoai = j
+                            break
+                    # ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
+                    # ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
                     p_xe_nuoc_ngoai = input.index(ket_qua_xe_nuoc_ngoai)
                     if (input[p_xe_nuoc_ngoai:p_xe_nuoc_ngoai+2] in ma_nuoc_ngoai):
                         
@@ -1227,8 +1302,13 @@ def main(input):
                           
                     else:
                     #tìm vị trí của xe cá nhân, cơ quan
-                        ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
-                        ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                        ket_qua_xe_thuong = ""
+                        for j in seri_dang_ky_chu:
+                            if j in input:
+                                ket_qua_xe_thuong = j
+                                break
+                        # ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
+                        # ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
                         p_xe_thuong = input.index(ket_qua_xe_thuong)
                         print(p_xe_thuong)
                         if (input[p_xe_thuong] in seri_dang_ky_chu):

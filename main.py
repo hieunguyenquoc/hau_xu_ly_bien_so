@@ -352,8 +352,10 @@ def main(input):
                                 return xe_nuoc_ngoai(input)
                         else:
                         #tìm vị trí của xe cá nhân, cơ quan
-                            ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input) 
-                            ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                            for j in seri_dang_ky_chu:
+                                if j in input:
+                                    ket_qua_xe_thuong = j
+                                    break
                             p_xe_thuong = input.index(ket_qua_xe_thuong)  
                             if (input[p_xe_thuong] in seri_dang_ky_chu):
                                 #sửa vị trí xe cá nhân, cơ quan thừa trước và sau
@@ -521,5 +523,4 @@ def main(input):
     else:
         print("Khong the sua bien so :",input)
         return input
-main(input)
             
