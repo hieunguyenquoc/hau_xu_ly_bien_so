@@ -336,7 +336,7 @@ def main(input):
                         ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
                         ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
                         p_xe_nuoc_ngoai = input.index(ket_qua_xe_nuoc_ngoai)
- 
+                        
                         if (input[p_xe_nuoc_ngoai:p_xe_nuoc_ngoai+2] in ma_nuoc_ngoai):
                             
                             #sửa biển số xe nước ngoài thừa trước
@@ -352,7 +352,7 @@ def main(input):
                                 return xe_nuoc_ngoai(input)
                         else:
                         #tìm vị trí của xe cá nhân, cơ quan
-                            ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
+                            ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input) 
                             ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
                             p_xe_thuong = input.index(ket_qua_xe_thuong)  
                             if (input[p_xe_thuong] in seri_dang_ky_chu):
@@ -379,7 +379,7 @@ def main(input):
                                 else:
                                     return xe_ca_nhan_co_quan_nha_nuoc(input)
             break
-    else:
+    elif(len(input) > 10):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
@@ -498,6 +498,11 @@ def main(input):
                                     input = replacer(input,"",8)
                                 return xe_ca_nhan_co_quan_nha_nuoc(input)
                             
+                            #sửa biển số xe cá nhân bị thiếu trước
+                            elif ((len(input[:p_xe_thuong]) <= 2)):
+                                print("Khong the sua bien so :",input)
+                                return input
+
                             #sửa vị trí xe cá nhân, cơ quan thừa trước
                             elif ((len(input[:p_xe_thuong]) >= 3)):
                                 for i in input[:p_xe_thuong-2]:
@@ -513,6 +518,8 @@ def main(input):
                             else:
                                 return xe_ca_nhan_co_quan_nha_nuoc(input)
             break
-
+    else:
+        print("Khong the sua bien so :",input)
+        return input
 main(input)
             

@@ -1,4 +1,5 @@
 from operator import index
+import pandas as pd
 from re import I
 
 
@@ -28,7 +29,7 @@ quan_doi = ["TM", "TC", "TH", "TT", "TK", "TN", "KA", "KB", "KC", "KD", "KV",
             "HE", "HD", "HH", "HT", "HQ", "HN", "PA", "PG", "PK", "PQ", "PM", 
             "PX", "PP-10", "PP-40", "PP-60", "AV", "AT", "AN", "AX", "AM", "VT", 
             "CA", "CB", "CD", "CH", "CK", "CM", "CN", "CP", "CT", "CV"]
-input = input("Nhap vao bien so :")
+# input = input("Nhap vao bien so :")
 
 def replacer(s, newstring, index, nofail=False):
     # raise an error if index is outside of the string
@@ -743,7 +744,7 @@ def xe_quan_doi(bien_so):
 def main(input):
     #nếu là xe quân đội
     if (input[0:2] in quan_doi) and (len(input)==6):
-        xe_quan_doi(input)
+        return xe_quan_doi(input)
     #nếu input có 7 ký tự
     elif (len(input)==7):
         #tìm vị trí của đặc biệt của xe quân đội
@@ -755,16 +756,16 @@ def main(input):
         if (input[p_quan_doi:p_quan_doi+2] in quan_doi) and (len(input[:p_quan_doi])>=1):
             for i in input[:p_quan_doi]:
                 input = replacer(input,"",input.index(i))
-                xe_quan_doi(input)
+                return xe_quan_doi(input)
             
         #sửa biển số xe quân đội thừa sau
         elif (input[p_quan_doi:p_quan_doi+2] in quan_doi) and (len(input[p_quan_doi+6:]) >= 1):
             for i in input[p_quan_doi+6:]:
                 input = replacer(input,"",input.index(i))
-                xe_quan_doi(input)
+                return xe_quan_doi(input)
         #nếu không phải xe quân đội
         else:
-            xe_ca_nhan_co_quan_nha_nuoc(input)
+            return xe_ca_nhan_co_quan_nha_nuoc(input)
     elif (len(input)==8):
         #tìm vị trí của ký tự đặc biệt của biển số xe quân đội
         for i in quan_doi:
@@ -783,19 +784,19 @@ def main(input):
                             input = replacer(input,"",input.index(i))
                         for j in input[6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input)
+                        return xe_quan_doi(input)
                         
                     #sửa biển số xe quân đội nếu thừa trước
                     elif ((len(input[:p_quan_doi]) >= 1)):
                         for i in input[:p_quan_doi]:
                             input = replacer(input,"",input.index(i))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
                     
                     #sửa biển số xe quân đội nếu thừa sau
                     elif ((len(input[p_quan_doi+6:]) >= 1)):
                         for j in input[p_quan_doi+6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
                 ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
@@ -807,10 +808,10 @@ def main(input):
                     if ((len(input[:p_xe_dac_biet]) >= 3)):
                         for i in input[:p_xe_dac_biet-2]:
                             input = replacer(input,"",input.index(i))
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     #đúng thì ko sửa gì 
                     else:
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
 
                 #nếu ko phải xe đặc biệt 
                 elif (check_type_of_character(input[2:5])) < 2:
@@ -836,7 +837,7 @@ def main(input):
                         input = replacer(input,"H",2)
                     if input[2] == "N":
                         input = replacer(input,"G",3)
-                    xe_ca_nhan_co_quan_nha_nuoc(input)
+                    return xe_ca_nhan_co_quan_nha_nuoc(input)
                 else:
                     #tìm vị trí của seri đăng ký của biển số xe cá nhân và cơ quan 
                     ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
@@ -848,10 +849,10 @@ def main(input):
                         if ((len(input[:p_xe_thuong]) >= 3)):
                             for i in input[:p_xe_thuong-2]:
                                 input = replacer(input,"",input.index(i))
-                            xe_ca_nhan_co_quan_nha_nuoc(input)
+                            return xe_ca_nhan_co_quan_nha_nuoc(input)
 
                         else:
-                            xe_ca_nhan_co_quan_nha_nuoc(input)
+                            return xe_ca_nhan_co_quan_nha_nuoc(input)
             break
         
     elif (len(input)==9):
@@ -871,19 +872,19 @@ def main(input):
                             input = replacer(input,"",input.index(i))
                         for j in input[6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input)
+                        return xe_quan_doi(input)
                         
                     #sửa biển số xe quân đội nếu thừa trước
                     elif ((len(input[:p_quan_doi]) >= 1)):
                         for i in input[:p_quan_doi]:
                             input = replacer(input,"",input.index(i))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
                     
                     #sửa biển số xe quân đội nếu thừa sau
                     elif ((len(input[p_quan_doi+6:]) >= 1)):
                         for j in input[p_quan_doi+6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
                 ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
@@ -896,7 +897,7 @@ def main(input):
                     if ((len(input[:p_xe_dac_biet]) >= 3)):
                         for i in input[:p_xe_dac_biet-2]:
                             input = replacer(input,"",input.index(i))
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     else:
                         if input[2] == "L":
                             input = replacer(input,"D",3)
@@ -920,35 +921,60 @@ def main(input):
                             input = replacer(input,"H",2)
                         if input[2] == "N":
                             input = replacer(input,"G",3)
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     # break   
                     # else:        
-                #sửa biển số nước ngoài
+                #sửa biển số nước ngoài và xe đặc vi
                 elif (check_type_of_character(input[2:5])) >= 2:
+
                     if input[5] == "N":
                         input = replacer(input,"G",6)
                     if input[6] == "N" or input[6] == "G":
                         input = replacer(input,"N",5)
-                        xe_nuoc_ngoai(input)
+                        return xe_nuoc_ngoai(input)
                     else:
                         ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
                         ket_qua_xe_thuong = ''.join(ket_qua_xe_thuong)
+                        # print(ket_qua_xe_thuong)
                         p_xe_thuong = input.index(ket_qua_xe_thuong)  
                         if (input[p_xe_thuong] in seri_dang_ky_chu):
                             if ((len(input[:p_xe_thuong]) >= 3)):
                                 for i in input[:p_xe_thuong-2]:
                                     input = replacer(input,"",input.index(i))
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
                             elif ((len(input[7:])) >= 1):
                                 for i in range(7,8):
                                     input = replacer(input,"",8)
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
                 else:
+                    if input[2] == "L":
+                        input = replacer(input,"D",3)
+                    if input[2] == "D":
+                        input = replacer(input,"A",3)
+                    if input[2] == "M":
+                        input = replacer(input,"K",3)
+                    if input[2] == "T":
+                        input = replacer(input,"Đ",3)
+                    if input[2] == "H":
+                        input = replacer(input,"C",3)
+                    if input[3] == "D":
+                        input = replacer(input,"L",2)
+                    if input[3] == "A":
+                        input = replacer(input,"D",2)
+                    if input[3] == "K":
+                        input = replacer(input,"M",2)
+                    if input[3] == "Đ":
+                        input = replacer(input,"T",2)
+                    if input[3] == "C":
+                        input = replacer(input,"H",2)
                     if input[2] == "N":
                         input = replacer(input,"G",3)
-                    if input[3] == "N" or input[6] == "G":
+                    if input[2:4] in xe_dac_biet:
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
+                    elif input[3] == "N" or input[6] == "G":
                         input = replacer(input,"N",2)
-                    xe_nuoc_ngoai(input)
+                        return xe_nuoc_ngoai(input)
+
             break
 
     elif (len(input)==10):
@@ -968,19 +994,19 @@ def main(input):
                             input = replacer(input,"",input.index(i))
                         for j in input[6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input)
-                        
+                        return xe_quan_doi(input)
+                          
                     #sửa biển số xe quân đội nếu thừa trước
                     elif ((len(input[:p_quan_doi]) >= 1)):
                         for i in input[:p_quan_doi]:
                             input = replacer(input,"",input.index(i))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
                     
                     #sửa biển số xe quân đội nếu thừa sau
                     elif ((len(input[p_quan_doi+6:]) >= 1)):
                         for j in input[p_quan_doi+6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
                 ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
@@ -992,13 +1018,13 @@ def main(input):
                     if ((len(input[:p_xe_dac_biet]) >= 3)):
                         for i in input[:p_xe_dac_biet-2]:
                             input = replacer(input,"",input.index(i))
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     
                     #sửa biển số xe cá nhân và cơ quan thừa sau
                     elif ((len(input[p_xe_dac_biet + 6:]) >= 1)):
                         for i in range(0,len(input[p_xe_dac_biet + 7:])):
                             input = replacer(input,"",p_xe_dac_biet + 7)
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     
                     #nếu không phải biển xe cá nhân và cơ quan
                     else:
@@ -1024,7 +1050,7 @@ def main(input):
                             input = replacer(input,"H",2)
                         if input[2] == "N":
                             input = replacer(input,"G",3)
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
             
                 else: 
                     #kiểm tra xem có phải biển nước ngoài không
@@ -1040,13 +1066,13 @@ def main(input):
                         if((len(input[:p_xe_nuoc_ngoai]) >= 6)):
                             for i in input[:p_xe_nuoc_ngoai-5]:
                                 input = replacer(input,"",input.index(i))
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         #sửa biển số xe nước ngoài thừa sau
                         elif ((len(input[p_xe_nuoc_ngoai + 4:]) >= 1)):
                             for j in range(0,len(input[p_xe_nuoc_ngoai + 4:])):
                                 input = replacer(input,"",p_xe_nuoc_ngoai + 4)
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
                     else:
                         ket_qua_xe_nuoc_ngoai = (i for i in ma_nuoc_ngoai if i in input)
                         ket_qua_xe_nuoc_ngoai = ''.join(ket_qua_xe_nuoc_ngoai)
@@ -1058,13 +1084,13 @@ def main(input):
                             if((len(input[:p_xe_nuoc_ngoai]) >= 3)):
                                 for i in input[:p_xe_nuoc_ngoai-2]:
                                     input = replacer(input,"",input.index(i))
-                                xe_nuoc_ngoai(input)
+                                return xe_nuoc_ngoai(input)
 
                             #sửa biển số xe nước ngoài thừa sau
                             elif ((len(input[p_xe_nuoc_ngoai + 6:]) >= 1)):
                                 for j in range(0,len(input[p_xe_nuoc_ngoai + 7:])):
                                     input = replacer(input,"",p_xe_nuoc_ngoai + 7)
-                                xe_nuoc_ngoai(input)
+                                return xe_nuoc_ngoai(input)
                         else:
                         #tìm vị trí của xe cá nhân, cơ quan
                             ket_qua_xe_thuong = (j for j in seri_dang_ky_chu if j in input)
@@ -1077,24 +1103,24 @@ def main(input):
                                         input = replacer(input,"",input.index(i))
                                     for j in range(p_xe_thuong + 5,p_xe_thuong + 5 + len(input[p_xe_thuong + 6:]) + 1) :
                                         input = replacer(input,"",j)
-                                    xe_ca_nhan_co_quan_nha_nuoc(input)
+                                    return xe_ca_nhan_co_quan_nha_nuoc(input)
                                 
                                 #sửa vị trí xe cá nhân, cơ quan thừa trước
                                 elif ((len(input[:p_xe_thuong]) >= 3)):
                                     for i in input[:p_xe_thuong-2]:
                                         input = replacer(input,"",input.index(i))
-                                    xe_ca_nhan_co_quan_nha_nuoc(input)
+                                    return xe_ca_nhan_co_quan_nha_nuoc(input)
 
                                 #sửa vị trí xe cá nhân, cơ quan thừa sau 
                                 elif ((len(input[p_xe_thuong + 5:])) >= 1):
                                     for i in range(0,len(input[p_xe_thuong + 6:])):
                                         input = replacer(input,"",p_xe_thuong + 3)
-                                    xe_ca_nhan_co_quan_nha_nuoc(input)
+                                    return xe_ca_nhan_co_quan_nha_nuoc(input)
                                 
                                 else:
-                                    xe_ca_nhan_co_quan_nha_nuoc(input)
+                                    return xe_ca_nhan_co_quan_nha_nuoc(input)
             break
-    else:
+    elif (len(input) > 10):
         for i in quan_doi:
             if i in input:
                 #tìm vị trí đặc biệt của xe quân đội
@@ -1111,19 +1137,19 @@ def main(input):
                             input = replacer(input,"",input.index(i))
                         for j in input[6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input)
+                        return xe_quan_doi(input)
                         
                     #sửa biển số xe quân đội nếu thừa trước
                     elif ((len(input[:p_quan_doi]) >= 1)):
                         for i in input[:p_quan_doi]:
                             input = replacer(input,"",input.index(i))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
                     
                     #sửa biển số xe quân đội nếu thừa sau
                     elif ((len(input[p_quan_doi+6:]) >= 1)):
                         for j in input[p_quan_doi+6:]:
                             input = replacer(input,"",input.index(j))
-                        xe_quan_doi(input) 
+                        return xe_quan_doi(input) 
             else:
                 #tìm vị trí biển xe đặc biệt
                 ket_qua_xe_dac_biet = (j for j in xe_dac_biet if j in input)
@@ -1137,19 +1163,19 @@ def main(input):
                         print(input)
                         for i in range(0,len(input[2 + 7:])):
                             input = replacer(input,"",2 + 7)
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
 
                     #sửa biển số xe cá nhân và cơ quan thừa trước
                     elif ((len(input[:p_xe_dac_biet]) >= 3)):
                         for i in input[:p_xe_dac_biet-2]:
                             input = replacer(input,"",input.index(i))
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
                     
                     #sửa biển số xe cá nhân và cơ quan thừa sau
                     elif ((len(input[p_xe_dac_biet + 6:]) >= 1)):
                         for i in range(0,len(input[p_xe_dac_biet + 7:])):
                             input = replacer(input,"",p_xe_dac_biet + 7)
-                        xe_ca_nhan_co_quan_nha_nuoc(input)
+                        return xe_ca_nhan_co_quan_nha_nuoc(input)
             
                 else: 
                     #kiểm tra xem có phải biển nước ngoài không
@@ -1166,38 +1192,38 @@ def main(input):
                                 input = replacer(input,"",input.index(i))
                             for j in range(0,len(input[5 + 4:])):
                                 input = replacer(input,"",5 + 4)
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         #sửa biển số xe nước ngoài thừa trước với biển mới
                         elif((len(input[:p_xe_nuoc_ngoai]) >= 6) and (input[p_xe_nuoc_ngoai-3:p_xe_nuoc_ngoai] in bien_so_nuoc_ngoai)):
                             for i in input[:p_xe_nuoc_ngoai-5]:
                                 input = replacer(input,"",input.index(i))
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         #sửa biển số xe nước ngoài thừa sau với biển mới
                         elif ((len(input[p_xe_nuoc_ngoai + 4:]) >= 1) and (input[p_xe_nuoc_ngoai-3:p_xe_nuoc_ngoai] in bien_so_nuoc_ngoai)):
                             for j in range(0,len(input[p_xe_nuoc_ngoai + 4:])):
                                 input = replacer(input,"",p_xe_nuoc_ngoai + 4)
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         elif ((len(input[:p_xe_nuoc_ngoai]) >= 3) and (len(input[p_xe_nuoc_ngoai + 6:]) >= 1) and (input[p_xe_nuoc_ngoai+2:p_xe_nuoc_ngoai+5] in bien_so_nuoc_ngoai)):
                             for i in input[:p_xe_nuoc_ngoai-2]:
                                 input = replacer(input,"",input.index(i))
                             for j in range(0,len(input[2 + 7:])):
                                 input = replacer(input,"",2 + 7)
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         #sửa biển số xe nước ngoài thừa trước với biển cũ
                         elif((len(input[:p_xe_nuoc_ngoai]) >= 3) and input[p_xe_nuoc_ngoai+2:p_xe_nuoc_ngoai+5] in bien_so_nuoc_ngoai):
                             for i in input[:p_xe_nuoc_ngoai-2]:
                                 input = replacer(input,"",input.index(i))
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
 
                         #sửa biển số xe nước ngoài thừa sau với biển cũ
                         elif ((len(input[p_xe_nuoc_ngoai + 6:]) >= 1) and input[p_xe_nuoc_ngoai+2:p_xe_nuoc_ngoai+5] in bien_so_nuoc_ngoai):
                             for j in range(0,len(input[p_xe_nuoc_ngoai + 7:])):
                                 input = replacer(input,"",p_xe_nuoc_ngoai + 7)
-                            xe_nuoc_ngoai(input)
+                            return xe_nuoc_ngoai(input)
                           
                     else:
                     #tìm vị trí của xe cá nhân, cơ quan
@@ -1212,23 +1238,44 @@ def main(input):
                                     input = replacer(input,"",input.index(i))
                                 for j in range(0,len(input[p_xe_thuong + 6:])+5):
                                     input = replacer(input,"",8)
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
                             
+                            #sửa biển số xe cá nhân bị thiếu trước
+                            elif ((len(input[:p_xe_thuong]) <= 2)):
+                                print("Khong the sua bien so :",input)
+                                return input
+
                             #sửa vị trí xe cá nhân, cơ quan thừa trước
                             elif ((len(input[:p_xe_thuong]) >= 3)):
                                 for i in input[:p_xe_thuong-2]:
                                     input = replacer(input,"",input.index(i))
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
 
                             #sửa vị trí xe cá nhân, cơ quan thừa sau 
                             elif ((len(input[p_xe_thuong + 5:])) >= 1):
+                                print(len(input[p_xe_thuong + 6:]))
                                 for i in range(0,len(input[p_xe_thuong + 6:])):
                                     input = replacer(input,"",8)
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
                             
-                            else:
-                                xe_ca_nhan_co_quan_nha_nuoc(input)
-            break
+                            elif ((len(input[:p_xe_thuong]) <= 2)):
+                                print("Khong the sua bien so :",input)
+                                return input
 
-main(input)
+                            else:
+                                return xe_ca_nhan_co_quan_nha_nuoc(input)
+            break
+    else:
+        print("Khong the sua bien so :",input)
+        return input
+# print(main(input))
+
+
+df = pd.read_excel("bienso.xlsx")
+for i in range(0,len(df)):
+    print(df._get_value(i,'Biển số nhận dạng AI'))
+    df.iat[i ,df.columns.get_loc('Biển số sau khi được hậu xử lý')] = main(str(df._get_value(i,'Biển số nhận dạng AI')))
+print(df.head())
+df.to_excel("bienso_hauxuly.xlsx")
+
             
