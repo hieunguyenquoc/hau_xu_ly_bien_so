@@ -29,7 +29,7 @@ quan_doi = ["TM", "TC", "TH", "TT", "TK", "TN", "KA", "KB", "KC", "KD", "KV",
             "HE", "HD", "HH", "HT", "HQ", "HN", "PA", "PG", "PK", "PQ", "PM", 
             "PX", "PP-10", "PP-40", "PP-60", "AV", "AT", "AN", "AX", "AM", "VT", 
             "CA", "CB", "CD", "CH", "CK", "CM", "CN", "CP", "CT", "CV"]
-# input = input("Nhap vao bien so :")
+input = input("Nhap vao bien so :")
 
 def replacer(s, newstring, index, nofail=False):
     # raise an error if index is outside of the string
@@ -1004,10 +1004,12 @@ def main(input):
                         input = replacer(input,"H",2)
                     if input[2] == "N":
                         input = replacer(input,"G",3)
+                    if input[3] == "N" or input[3] == "G":
+                        input = replacer(input,"N",2)
                     if input[2:4] in xe_dac_biet:
                         return xe_ca_nhan_co_quan_nha_nuoc(input)
-                    elif input[3] == "N" or input[6] == "G":
-                        input = replacer(input,"N",2)
+                    else:
+                        # input = replacer(input,"N",2)
                         return xe_nuoc_ngoai(input)
 
             break
@@ -1348,14 +1350,14 @@ def main(input):
     else:
         print("Khong the sua bien so :",input)
         return input
-# print(main(input))
+print(main(input))
 
 
-df = pd.read_excel("bienso.xlsx")
-for i in range(0,len(df)):
-    print(df._get_value(i,'Biển số nhận dạng AI'))
-    df.iat[i ,df.columns.get_loc('Biển số sau khi được hậu xử lý')] = main(str(df._get_value(i,'Biển số nhận dạng AI')))
-print(df.head())
-df.to_excel("bienso_hauxuly.xlsx")
+# df = pd.read_excel("bienso.xlsx")
+# for i in range(0,len(df)):
+#     print(df._get_value(i,'Biển số nhận dạng AI'))
+#     df.iat[i ,df.columns.get_loc('Biển số sau khi được hậu xử lý')] = main(str(df._get_value(i,'Biển số nhận dạng AI')))
+# print(df.head())
+# df.to_excel("bienso_hauxuly.xlsx")
 
             
